@@ -1,8 +1,8 @@
 <?php 
 
-require 'Task.php';
 require 'database/Connection.php';
 require 'database/QuerryBuilder.php';
+require 'Task.php';
 
 $pdo = Connection::make();
 

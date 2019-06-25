@@ -6,7 +6,7 @@ class Connection
     {
         
         try {
-            return new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'user', 'Medvedia00');
+            return new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'test', 'password');
         
         } catch (PDOException $e) {
             die($e->getMessage());

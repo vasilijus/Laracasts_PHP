@@ -1,17 +1,22 @@
 <?php 
 
-require 'database/Connection.php';
-require 'database/QuerryBuilder.php';
+$query = require 'bootstrap.php';
+
 require 'Task.php';
 
-// Taking a static method
-$pdo = Connection::make();
-
-// Passign a connection to the Query, and building the output
-$query = new QuerryBuilder($pdo);
 
 // Using another method from the Querry Builder
-$tasks = $query->selectAll('todos');
+$tasks = $query->selectAll('todos', 'Task');
+
+// $tasks = array_map( function($task) {
+//     $t = new Task();
+//     $t->description = $task->description;
+//     $t->completed = $task->completed;
+//     return $t;
+// },$tasks);
+
+
+
 var_dump($tasks);
 
 require 'index.view.php';
